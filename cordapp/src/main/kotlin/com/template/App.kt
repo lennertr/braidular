@@ -31,8 +31,32 @@ class EchoFlow(private val message: String) : FlowLogic<String>() {
 /**
  * A simple braid service
  */
-class SimpleService(private val serviceHub: AppServiceHub) {
+class SimpleService1(private val serviceHub: AppServiceHub) {
   fun echo(msg: String) : Future<String> {
     return serviceHub.startFlow(EchoFlow(msg)).returnValue.toVertxFuture()
   }
+}
+
+class SimpleService2(private val serviceHub: AppServiceHub) {
+  fun echo(msg: String) : Future<String> {
+    return serviceHub.startFlow(EchoFlow(msg)).returnValue.toVertxFuture()
+  }
+}
+
+class SimpleService3(private val serviceHub: AppServiceHub) {
+  fun echo(msg: String) : Future<String> {
+    return serviceHub.startFlow(EchoFlow(msg)).returnValue.toVertxFuture()
+  }
+}
+
+class SimpleService4(private val serviceHub: AppServiceHub) {
+  fun echo(msg: String) : Future<String> {
+    return serviceHub.startFlow(EchoFlow(msg)).returnValue.toVertxFuture()
+  }
+}
+
+class SimpleService5(private val serviceHub: AppServiceHub) {
+    fun echo(msg: String) : Future<String> {
+        return serviceHub.startFlow(EchoFlow(msg)).returnValue.toVertxFuture()
+    }
 }

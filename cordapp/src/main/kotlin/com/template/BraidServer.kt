@@ -25,7 +25,11 @@ class BraidServer(private val services: AppServiceHub) : SingletonSerializeAsTok
     } else {
       Json.decodeValue(config.encode(), BraidConfig::class.java)
         .withHttpServerOptions(HttpServerOptions().setSsl(false))
-        .withService("echoService", SimpleService(services))
+        .withService("dummyService1", SimpleService1(services))
+        .withService("dummyService2", SimpleService2(services))
+        .withService("dummyService3", SimpleService3(services))
+        .withService("dummyService4", SimpleService4(services))
+        .withService("dummyService5", SimpleService5(services))
         .withFlow(EchoFlow::class)
         .bootstrapBraid(services, Handler { result ->
           if (result.failed()) {
